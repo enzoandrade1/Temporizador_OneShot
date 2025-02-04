@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "Enzo Andrade Sousa Santos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 63.6,
+      "left": -159.4,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 121.2,
+      "left": -159.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 169.2,
+      "left": -159.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 263.15,
+      "left": -144,
+      "attrs": { "value": "300000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 282.35,
+      "left": -144,
+      "attrs": { "value": "300000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 301.55,
+      "left": -144,
+      "attrs": { "value": "300000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 6.2,
+      "left": -115.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GP11", "led1:A", "green", [ "h-82.85", "v-41.65" ] ],
+    [ "pico:GP12", "led2:A", "green", [ "h-140.45", "v15.99" ] ],
+    [ "pico:GP13", "led3:A", "green", [ "h-82.85", "v44.79" ] ],
+    [ "led1:C", "r1:1", "green", [ "v0", "h-47.6", "v163.2" ] ],
+    [ "led2:C", "r2:1", "green", [ "v0", "h-47.6", "v124.8" ] ],
+    [ "led3:C", "r3:1", "green", [ "v0", "h-47.6", "v96" ] ],
+    [ "r1:2", "pico:GND.4", "green", [ "v0", "h46.8", "v-86.4" ] ],
+    [ "r2:2", "pico:GND.4", "green", [ "v0", "h46.8", "v-115.2" ] ],
+    [ "r3:2", "pico:GND.4", "green", [ "v0", "h46.8", "v-124.8" ] ],
+    [ "pico:GP5", "btn1:2.r", "green", [ "h0" ] ],
+    [ "pico:GND.1", "btn1:1.r", "black", [ "h-25.25", "v-12.85" ] ]
+  ],
+  "dependencies": {}
+}
